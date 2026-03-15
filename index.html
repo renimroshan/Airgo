@@ -3,42 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AirGo | The World at Your Fingertips</title>
-    <link rel="stylesheet" href="style.css">
+    <title>AirGo | Global Travel</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --espresso: #1c1412; --gold: #c5a059; --text-muted: #a8a8a8; }
+        body { margin: 0; font-family: 'Inter', sans-serif; background-color: var(--espresso); color: white; -webkit-font-smoothing: antialiased; }
+        
+        /* Navigation */
+        .top-nav { padding: 25px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(197, 160, 89, 0.15); }
+        .logo-thin { font-weight: 200; font-size: 26px; color: var(--gold); letter-spacing: 1px; }
+        .logo-bold { font-weight: 600; font-size: 26px; color: var(--gold); }
+        .tagline { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); }
+
+        /* Search Section - Compact Wego Style */
+        .hero-section { height: 400px; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at center, #251b19, var(--espresso)); }
+        .search-container { width: 90%; max-width: 1050px; }
+        .search-mode { margin-bottom: 12px; display: flex; gap: 20px; }
+        .mode-btn { background: none; border: none; color: white; padding: 6px 0; font-size: 13px; cursor: pointer; opacity: 0.4; border-bottom: 2px solid transparent; }
+        .mode-btn.active { opacity: 1; border-color: var(--gold); }
+        .engine-wrapper { background: white; display: flex; padding: 6px; border-radius: 4px; align-items: center; }
+        .input-group { flex: 1; padding: 5px 15px; border-right: 1px solid #eee; }
+        .input-group:nth-last-child(2) { border-right: none; }
+        .input-group label { display: block; font-size: 9px; color: #888; font-weight: 600; text-transform: uppercase; }
+        .input-group input { width: 100%; border: none; outline: none; font-size: 14px; color: #333; }
+        .search-trigger { background: var(--espresso); color: var(--gold); border: 1px solid var(--gold); padding: 12px 25px; border-radius: 3px; font-size: 12px; font-weight: 600; cursor: pointer; text-transform: uppercase; }
+
+        /* Discovery Grid */
+        .discovery-area { padding: 60px 8%; }
+        .section-title { font-size: 11px; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 30px; color: var(--gold); text-align: center; }
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
+        .card { height: 250px; background-size: cover; background-position: center; border-radius: 6px; display: flex; align-items: flex-end; padding: 20px; border: 1px solid rgba(197, 160, 89, 0.2); position: relative; }
+        .card span { position: relative; z-index: 2; font-size: 16px; font-weight: 200; letter-spacing: 2px; text-transform: uppercase; }
+        .card::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(transparent, rgba(0,0,0,0.85)); border-radius: 6px; }
+
+        footer { padding: 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.03); font-size: 11px; color: var(--text-muted); }
+    </style>
 </head>
 <body>
     <nav class="top-nav">
-        <div class="logo-box">
-            <span class="logo-thin">A</span><span class="logo-bold">irGo</span>
-        </div>
+        <div class="logo-box"><span class="logo-thin">A</span><span class="logo-bold">irGo</span></div>
         <div class="tagline">The world at your fingertips.</div>
     </nav>
 
     <main class="hero-section">
         <div class="search-container">
-            <div class="search-mode">
-                <button class="mode-btn active">Flights</button>
-                <button class="mode-btn">Hotels</button>
-            </div>
-            
+            <div class="search-mode"><button class="mode-btn active">Flights</button><button class="mode-btn">Hotels</button></div>
             <div class="engine-wrapper">
-                <div class="input-group">
-                    <label>From</label>
-                    <input type="text" placeholder="Origin City">
-                </div>
-                <div class="input-group">
-                    <label>To</label>
-                    <input type="text" placeholder="Destination">
-                </div>
-                <div class="input-group">
-                    <label>Depart</label>
-                    <input type="date">
-                </div>
-                <div class="input-group">
-                    <label>Return</label>
-                    <input type="date">
-                </div>
+                <div class="input-group"><label>From</label><input type="text" placeholder="Origin"></div>
+                <div class="input-group"><label>To</label><input type="text" placeholder="Destination"></div>
+                <div class="input-group"><label>Depart</label><input type="date"></div>
+                <div class="input-group"><label>Return</label><input type="date"></div>
                 <button class="search-trigger">Search Flights</button>
             </div>
         </div>
@@ -54,12 +68,9 @@
         </div>
     </section>
 
-    <footer class="pro-footer">
-        <div class="footer-info">
-            <p><strong>Support:</strong> AirGo@gmail.com | +965 99751560</p>
-            <p>© 2026 AirGo. Premium Global Flight Intelligence.</p>
-        </div>
+    <footer>
+        <p>Support: AirGo@gmail.com | +965 99751560</p>
+        <p>© 2026 AirGo. Premium Global Flight Intelligence.</p>
     </footer>
 </body>
 </html>
-                       
