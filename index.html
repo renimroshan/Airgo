@@ -3,119 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AirGo | Premium Travel Aggregator</title>
+    <title>AirGo | The world at your fingertips</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap" rel="stylesheet">
     <style>
-        /* RESET & CORE THEME */
-        :root { --espresso: #0f0a09; --gold: #c5a059; --glass: rgba(255, 255, 255, 0.03); }
+        :root { --espresso: #0d0908; --gold: #c5a059; --panel: #1a1412; }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            background-color: var(--espresso); color: #fff; 
-            font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
+        body { background-color: var(--espresso); color: #fff; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
 
-        /* TOP NAVIGATION */
-        nav { padding: 40px 8%; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 30px; color: var(--gold); letter-spacing: 3px; font-weight: 200; text-transform: none; }
+        /* Nav */
+        nav { padding: 30px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(197,160,89,0.1); }
+        .logo { font-size: 24px; color: var(--gold); letter-spacing: 2px; font-weight: 200; }
         .logo span { font-weight: 600; }
-        .tagline { font-size: 10px; letter-spacing: 5px; text-transform: uppercase; opacity: 0.4; }
 
-        /* HERO & SEARCH ENGINE (WEGO STYLE) */
-        .hero { padding: 60px 5%; text-align: center; }
-        h1 { font-size: 48px; font-weight: 200; color: var(--gold); margin-bottom: 40px; letter-spacing: 2px; text-transform: uppercase; }
+        /* Hero */
+        .hero { padding: 80px 5% 60px; text-align: center; background: linear-gradient(to bottom, #16100e, var(--espresso)); }
+        h1 { font-size: 42px; font-weight: 200; color: var(--gold); margin-bottom: 50px; letter-spacing: 2px; text-transform: uppercase; }
 
-        .search-wrapper { 
-            max-width: 1150px; margin: 0 auto; background: var(--glass); 
-            padding: 35px; border-radius: 4px; border: 1px solid rgba(197, 160, 89, 0.1); 
-        }
-        .tabs { display: flex; gap: 30px; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .tabs button { 
-            background: none; border: none; color: #fff; padding: 12px 0; 
-            font-size: 11px; text-transform: uppercase; cursor: pointer; opacity: 0.3; letter-spacing: 2px;
-        }
+        /* Search Engine (Wego Style) */
+        .search-wrapper { max-width: 1100px; margin: 0 auto; background: rgba(255,255,255,0.03); padding: 30px; border-radius: 8px; border: 1px solid rgba(197,160,89,0.1); }
+        .tabs { display: flex; gap: 25px; margin-bottom: 15px; }
+        .tabs button { background: none; border: none; color: #fff; padding: 8px 0; font-size: 11px; text-transform: uppercase; cursor: pointer; opacity: 0.4; letter-spacing: 2px; }
         .tabs button.active { opacity: 1; border-bottom: 2px solid var(--gold); }
+        .engine { display: grid; grid-template-columns: 1.2fr 1.2fr 1fr 1fr 0.8fr; background: #fff; border-radius: 4px; overflow: hidden; padding: 4px; gap: 1px; }
+        .field { padding: 10px 15px; border-right: 1px solid #eee; text-align: left; }
+        .field label { display: block; font-size: 9px; color: #999; font-weight: 700; text-transform: uppercase; }
+        .field input { width: 100%; border: none; outline: none; font-size: 14px; color: #111; font-weight: 500; }
+        .search-btn { background: var(--espresso); color: var(--gold); border: none; padding: 0 20px; font-size: 11px; font-weight: 600; cursor: pointer; text-transform: uppercase; }
 
-        .engine { 
-            display: grid; grid-template-columns: 1.5fr 1.5fr 1fr 1fr 0.8fr; 
-            background: #fff; border-radius: 4px; overflow: hidden; padding: 6px; gap: 2px;
-        }
-        .field { padding: 12px 18px; border-right: 1px solid #f0f0f0; text-align: left; }
-        .field:nth-last-child(2) { border-right: none; }
-        .field label { display: block; font-size: 9px; color: #aaa; font-weight: 700; text-transform: uppercase; margin-bottom: 4px; }
-        .field input { 
-            width: 100%; border: none; outline: none; font-size: 15px; 
-            font-family: 'Inter', sans-serif; color: #111; font-weight: 500;
-        }
+        /* Discovery */
+        .section-box { padding: 80px 8%; text-align: center; }
+        .section-title { font-size: 12px; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 40px; color: var(--gold); opacity: 0.6; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto; }
+        .card { height: 280px; border-radius: 4px; position: relative; overflow: hidden; display: flex; align-items: flex-end; padding: 20px; border: 1px solid rgba(197, 160, 89, 0.1); background-size: cover; background-position: center; transition: 0.3s; }
+        .card:hover { border-color: var(--gold); transform: translateY(-5px); }
+        .card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); }
+        .card span { position: relative; z-index: 2; font-size: 14px; font-weight: 200; letter-spacing: 2px; text-transform: uppercase; }
 
-        .search-btn { 
-            background: var(--espresso); color: var(--gold); border: 1px solid var(--gold);
-            padding: 0 20px; font-size: 11px; font-weight: 600; cursor: pointer;
-            text-transform: uppercase; transition: 0.3s; height: 100%; letter-spacing: 1px;
-        }
-        .search-btn:hover { background: var(--gold); color: #fff; }
+        /* Info Section (The "Extra" stuff you wanted) */
+        .info-content { background: var(--panel); padding: 80px 15%; text-align: center; line-height: 1.8; }
+        .info-content h2 { color: var(--gold); font-weight: 200; margin-bottom: 20px; }
+        .info-content p { font-size: 15px; opacity: 0.7; max-width: 800px; margin: 0 auto; }
 
-        /* GLOBAL DISCOVERY (FIXED GRID) */
-        .discovery { padding: 100px 8%; text-align: center; }
-        .discovery h2 { font-size: 12px; letter-spacing: 8px; text-transform: uppercase; margin-bottom: 50px; color: var(--gold); opacity: 0.6; font-weight: 400; }
-        
-        .grid { 
-            display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; 
-            max-width: 1200px; margin: 0 auto;
-        }
-        .card { 
-            height: 320px; border-radius: 4px; position: relative; overflow: hidden; 
-            display: flex; align-items: flex-end; padding: 25px;
-            border: 1px solid rgba(197, 160, 89, 0.15);
-            background-size: cover; background-position: center; transition: 0.5s ease;
-        }
-        .card:hover { transform: translateY(-10px); border-color: var(--gold); }
-        .card::after { 
-            content: ''; position: absolute; inset: 0; 
-            background: linear-gradient(to top, rgba(0,0,0,0.95) 10%, transparent 60%); 
-        }
-        .card span { position: relative; z-index: 2; font-size: 15px; font-weight: 200; letter-spacing: 3px; text-transform: uppercase; }
+        /* FAQ Section */
+        .faq { padding: 80px 8%; max-width: 900px; margin: 0 auto; }
+        .faq-item { background: rgba(255,255,255,0.02); padding: 20px; margin-bottom: 10px; border: 1px solid rgba(197,160,89,0.1); border-radius: 4px; text-align: left; }
+        .faq-item h4 { font-size: 14px; color: var(--gold); margin-bottom: 10px; font-weight: 400; }
+        .faq-item p { font-size: 13px; opacity: 0.6; }
 
-        footer { padding: 80px 0; text-align: center; opacity: 0.4; font-size: 10px; letter-spacing: 3px; line-height: 2; }
+        /* Contact & Footer */
+        footer { padding: 80px 8%; background: #080504; border-top: 1px solid rgba(197,160,89,0.1); text-align: center; }
+        .contact-row { display: flex; justify-content: center; gap: 40px; margin-bottom: 40px; }
+        .contact-item { font-size: 13px; opacity: 0.8; }
+        .contact-item strong { color: var(--gold); display: block; margin-bottom: 5px; }
+        .copy { font-size: 10px; opacity: 0.3; letter-spacing: 2px; }
     </style>
 </head>
 <body>
     <nav>
         <div class="logo">A<span>irGo</span></div>
-        <p class="tagline">The world at your fingertips.</p>
     </nav>
 
     <div class="hero">
-        <h1>AirGo: The World Redefined.</h1>
-        
+        <h1>The world at your fingertips.</h1>
         <div class="search-wrapper">
-            <div class="tabs">
-                <button class="active">Flights</button>
-                <button>Hotels</button>
-            </div>
+            <div class="tabs"><button class="active">Flights</button><button>Hotels</button></div>
             <div class="engine">
-                <div class="field"><label>From</label><input type="text" placeholder="Kuwait (KWI)"></div>
-                <div class="field"><label>To</label><input type="text" placeholder="London (LHR)"></div>
+                <div class="field"><label>From</label><input type="text" placeholder="Origin"></div>
+                <div class="field"><label>To</label><input type="text" placeholder="Destination"></div>
                 <div class="field"><label>Depart</label><input type="date"></div>
                 <div class="field"><label>Return</label><input type="date"></div>
-                <button class="search-btn">Search Flights</button>
+                <button class="search-btn">Search</button>
             </div>
         </div>
     </div>
 
-    <div class="discovery">
-        <h2>Global Discovery</h2>
+    <div class="section-box">
+        <h2 class="section-title">Global Discovery</h2>
         <div class="grid">
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=800')"><span>Europe</span></div>
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=800')"><span>Asia</span></div>
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1485738422979-f5c462d49f74?q=80&w=800')"><span>America</span></div>
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=800')"><span>Middle East</span></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=600')"><span>Europe</span></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=600')"><span>Asia</span></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1485738422979-f5c462d49f74?q=80&w=600')"><span>America</span></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=600')"><span>Middle East</span></div>
+        </div>
+    </div>
+
+    <div class="info-content">
+        <h2>What is AirGo?</h2>
+        <p>AirGo is a premium travel meta-search engine designed to simplify global exploration. We instantly compare real-time flight deals and hotel rates from hundreds of providers to ensure you never overpay for your journey.</p>
+    </div>
+
+    <div class="faq">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h4>Can I book directly?</h4>
+            <p>AirGo helps you find the best prices. Once you select a deal, we redirect you to the official airline or agency to complete your booking securely.</p>
+        </div>
+        <div class="faq-item">
+            <h4>How does AirGo ensure the lowest price?</h4>
+            <p>Our algorithms scan global databases every second to bring you live pricing, including exclusive "Business" and "First Class" deals you won't find elsewhere.</p>
         </div>
     </div>
 
     <footer>
-        SUPPORT: AirGo@gmail.com | +965 99751560<br>
-        © 2026 AIRGO. PREMIUM GLOBAL FLIGHT INTELLIGENCE.
+        <div class="contact-row">
+            <div class="contact-item"><strong>Phone</strong>+965 99751560</div>
+            <div class="contact-item"><strong>Email</strong>AirGo@gmail.com</div>
+        </div>
+        <p class="copy">© 2026 AIRGO. PREMIUM GLOBAL FLIGHT INTELLIGENCE.</p>
     </footer>
 </body>
 </html>
