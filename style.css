@@ -2,31 +2,46 @@
     --dark-brown: #1a0f0e;
     --gold: #c5a059;
     --white: #ffffff;
-    --cream: #f9f5f0;
+    --gray: #f4f4f4;
 }
 
-body { margin: 0; font-family: 'Arial', sans-serif; background: var(--cream); color: var(--dark-brown); }
+body, html { margin: 0; padding: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: var(--gray); }
 
-header { background: var(--dark-brown); padding: 20px 5%; display: flex; justify-content: space-between; border-bottom: 2px solid var(--gold); }
-.logo { color: var(--gold); font-size: 28px; font-weight: 900; letter-spacing: 3px; }
-nav span { color: white; margin-left: 20px; font-size: 14px; cursor: pointer; font-weight: bold; }
+header { background: var(--dark-brown); padding: 15px 0; border-bottom: 2px solid var(--gold); }
+.nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+.logo { color: var(--gold); font-size: 30px; font-weight: 900; letter-spacing: 5px; }
+.menu a { color: white; text-decoration: none; margin-left: 30px; font-weight: bold; text-transform: uppercase; font-size: 13px; }
+.menu a.active { color: var(--gold); border-bottom: 2px solid var(--gold); padding-bottom: 5px; }
 
-.hero { background: var(--dark-brown); padding: 80px 5%; text-align: center; color: white; }
-.hero h1 { font-size: 40px; margin-bottom: 20px; }
+.hero { 
+    background: linear-gradient(rgba(26, 15, 14, 0.7), rgba(26, 15, 14, 0.7)), url('https://images.unsplash.com/photo-1436491865332-7a61a109c0f2?auto=format&fit=crop&w=1600&q=80'); 
+    background-size: cover; 
+    height: 550px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
 
-/* SEARCH INTERFACE */
-.search-engine { background: var(--white); padding: 30px; border-radius: 8px; max-width: 1000px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-.search-row { display: flex; gap: 15px; align-items: flex-end; }
-.input-box { flex: 1; text-align: left; }
-.input-box label { color: #666; font-size: 12px; display: block; margin-bottom: 5px; }
-.input-box input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+.hero-content { text-align: center; width: 90%; max-width: 1100px; }
+.hero-content h1 { color: white; font-size: 55px; margin-bottom: 10px; }
+.hero-content h1 span { color: var(--gold); }
+.hero-content p { color: #ddd; font-size: 18px; margin-bottom: 40px; }
 
-.search-btn { background: var(--gold); color: var(--dark-brown); border: none; padding: 15px 40px; font-weight: bold; font-size: 18px; border-radius: 4px; cursor: pointer; }
+/* SEARCH ENGINE UI */
+.search-engine-box { background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(15px); padding: 30px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.2); }
+.trip-type { text-align: left; margin-bottom: 15px; color: white; font-size: 13px; }
+.trip-type span { margin-right: 20px; cursor: pointer; opacity: 0.8; }
 
-/* THE REST OF THE PARTS */
-.content-section { padding: 50px 5%; text-align: center; }
-.destinations-grid { display: flex; gap: 20px; justify-content: center; margin-top: 30px; }
-.city-card { background: white; width: 250px; padding: 40px 20px; border-radius: 10px; border-bottom: 5px solid var(--gold); box-shadow: 0 5px 15px rgba(0,0,0,0.05); font-weight: bold; }
-.city-card span { display: block; color: #888; font-size: 12px; margin-top: 10px; }
+.search-inputs { display: flex; gap: 10px; background: white; padding: 15px; border-radius: 8px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
+.field { flex: 1; text-align: left; border-right: 1px solid #eee; padding-right: 10px; }
+.field:last-of-type { border-right: none; }
+.field label { display: block; font-size: 11px; color: #777; font-weight: bold; text-transform: uppercase; }
+.field input { width: 100%; border: none; padding: 8px 0; font-size: 15px; font-weight: bold; color: var(--dark-brown); outline: none; }
 
-footer { background: #111; color: #555; padding: 20px; text-align: center; font-size: 12px; }
+.btn-search { background: var(--gold); color: var(--dark-brown); border: none; padding: 0 30px; border-radius: 4px; font-weight: 900; cursor: pointer; text-transform: uppercase; }
+
+/* DISCOVERY TILES */
+.global-deals { max-width: 1200px; margin: -50px auto 50px; padding: 0 20px; }
+.global-deals h2 { margin-bottom: 20px; color: var(--dark-brown); }
+.deals-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.deal-card { height: 180px; background: var(--dark-brown); border-radius: 10px; display: flex; align-items: flex-end; padding: 20px; color: var(--gold); font-weight: bold; border: 1px solid var(--gold); }
