@@ -1,47 +1,103 @@
 :root {
-    --dark-brown: #1a0f0e;
+    --espresso: #1c1412;
     --gold: #c5a059;
-    --white: #ffffff;
-    --gray: #f4f4f4;
+    --text-muted: #a8a8a8;
 }
 
-body, html { margin: 0; padding: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: var(--gray); }
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--espresso);
+    color: white;
+    -webkit-font-smoothing: antialiased;
+}
 
-header { background: var(--dark-brown); padding: 15px 0; border-bottom: 2px solid var(--gold); }
-.nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-.logo { color: var(--gold); font-size: 30px; font-weight: 900; letter-spacing: 5px; }
-.menu a { color: white; text-decoration: none; margin-left: 30px; font-weight: bold; text-transform: uppercase; font-size: 13px; }
-.menu a.active { color: var(--gold); border-bottom: 2px solid var(--gold); padding-bottom: 5px; }
+/* NAVIGATION */
+.top-nav {
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.15);
+}
 
-.hero { 
-    background: linear-gradient(rgba(26, 15, 14, 0.7), rgba(26, 15, 14, 0.7)), url('https://images.unsplash.com/photo-1436491865332-7a61a109c0f2?auto=format&fit=crop&w=1600&q=80'); 
-    background-size: cover; 
-    height: 550px; 
-    display: flex; 
-    align-items: center; 
+.logo-thin { font-weight: 200; font-size: 26px; color: var(--gold); letter-spacing: 1px; }
+.logo-bold { font-weight: 600; font-size: 26px; color: var(--gold); }
+
+.tagline { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); font-weight: 400; }
+
+/* SEARCH SECTION */
+.hero-section {
+    height: 450px;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    background: radial-gradient(circle at center, #251b19, var(--espresso));
 }
 
-.hero-content { text-align: center; width: 90%; max-width: 1100px; }
-.hero-content h1 { color: white; font-size: 55px; margin-bottom: 10px; }
-.hero-content h1 span { color: var(--gold); }
-.hero-content p { color: #ddd; font-size: 18px; margin-bottom: 40px; }
+.search-container { width: 90%; max-width: 1050px; }
 
-/* SEARCH ENGINE UI */
-.search-engine-box { background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(15px); padding: 30px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.2); }
-.trip-type { text-align: left; margin-bottom: 15px; color: white; font-size: 13px; }
-.trip-type span { margin-right: 20px; cursor: pointer; opacity: 0.8; }
+.search-mode { margin-bottom: 12px; display: flex; gap: 20px; }
+.mode-btn { 
+    background: none; border: none; color: white; padding: 6px 0; 
+    font-size: 13px; cursor: pointer; opacity: 0.4; border-bottom: 2px solid transparent; 
+}
+.mode-btn.active { opacity: 1; border-color: var(--gold); }
 
-.search-inputs { display: flex; gap: 10px; background: white; padding: 15px; border-radius: 8px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
-.field { flex: 1; text-align: left; border-right: 1px solid #eee; padding-right: 10px; }
-.field:last-of-type { border-right: none; }
-.field label { display: block; font-size: 11px; color: #777; font-weight: bold; text-transform: uppercase; }
-.field input { width: 100%; border: none; padding: 8px 0; font-size: 15px; font-weight: bold; color: var(--dark-brown); outline: none; }
+.engine-wrapper {
+    background: white;
+    display: flex;
+    padding: 6px;
+    border-radius: 4px;
+    align-items: center;
+}
 
-.btn-search { background: var(--gold); color: var(--dark-brown); border: none; padding: 0 30px; border-radius: 4px; font-weight: 900; cursor: pointer; text-transform: uppercase; }
+.input-group { flex: 1; padding: 5px 15px; border-right: 1px solid #eee; }
+.input-group:nth-last-child(2) { border-right: none; }
 
-/* DISCOVERY TILES */
-.global-deals { max-width: 1200px; margin: -50px auto 50px; padding: 0 20px; }
-.global-deals h2 { margin-bottom: 20px; color: var(--dark-brown); }
-.deals-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.deal-card { height: 180px; background: var(--dark-brown); border-radius: 10px; display: flex; align-items: flex-end; padding: 20px; color: var(--gold); font-weight: bold; border: 1px solid var(--gold); }
+.input-group label { display: block; font-size: 9px; color: #888; font-weight: 600; margin-bottom: 2px; text-transform: uppercase; }
+.input-group input { 
+    width: 100%; border: none; outline: none; 
+    font-size: 14px; color: #333; font-weight: 500; 
+}
+
+.search-trigger {
+    background: var(--espresso);
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 12px 25px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.2s;
+}
+.search-trigger:hover { background: var(--gold); color: white; }
+
+/* DISCOVERY GRID */
+.discovery-area { padding: 80px 8%; }
+.section-title { font-size: 11px; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 40px; color: var(--gold); font-weight: 400; text-align: center; opacity: 0.8; }
+
+.grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
+.card {
+    height: 280px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 6px;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    position: relative;
+}
+.card span { position: relative; z-index: 2; font-size: 18px; font-weight: 200; letter-spacing: 2px; text-transform: uppercase; }
+.card::after { 
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+    background: linear-gradient(transparent, rgba(0,0,0,0.85)); 
+    border-radius: 6px;
+}
+
+/* FOOTER */
+.pro-footer { padding: 60px 5%; border-top: 1px solid rgba(255,255,255,0.03); text-align: center; }
+.footer-info p { font-size: 11px; color: var(--text-muted); line-height: 2.2; letter-spacing: 1px; }
