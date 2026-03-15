@@ -3,65 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AirGo | Compare Flights & Hotels</title>
+    <title>AirGo | Global Flight Comparison</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="logo">AIRGO</div>
-        <nav>
-            <a href="#"><i class="fas fa-plane"></i> Flights</a>
-            <a href="#"><i class="fas fa-hotel"></i> Hotels</a>
-            <a href="#"><i class="fas fa-car"></i> Car Hire</a>
-        </nav>
-    </header>
+    <div class="main-wrapper">
+        <header>
+            <div class="nav-container">
+                <div class="logo">AIRGO</div>
+                <div class="menu">
+                    <a href="#" class="active">Flights</a>
+                    <a href="#">Hotels</a>
+                    <a href="#">Explore</a>
+                </div>
+            </div>
+        </header>
 
-    <section class="hero">
-        <h1>Where to next, Boss?</h1>
-        <p>Compare cheap flights from KWI to the world.</p>
-        
-        <div class="search-box">
-            <div class="input-group">
-                <label>From</label>
-                <input type="text" value="Kuwait (KWI)" readonly>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>The World, <span>Redefined.</span></h1>
+                <p>Search and compare millions of real-time prices.</p>
+                
+                <div class="search-engine-box">
+                    <div class="trip-type">
+                        <span>Return</span>
+                        <span>One-way</span>
+                        <span>Multi-city</span>
+                    </div>
+                    <div class="search-inputs">
+                        <div class="field">
+                            <label>From</label>
+                            <input type="text" placeholder="Origin Airport">
+                        </div>
+                        <div class="field">
+                            <label>To</label>
+                            <input type="text" placeholder="Destination Airport">
+                        </div>
+                        <div class="field">
+                            <label>Depart</label>
+                            <input type="date">
+                        </div>
+                        <div class="field">
+                            <label>Return</label>
+                            <input type="date">
+                        </div>
+                        <button class="btn-search">Search Flights</button>
+                    </div>
+                </div>
             </div>
-            <div class="input-group">
-                <label>To</label>
-                <input type="text" placeholder="Where to?">
-            </div>
-            <div class="input-group">
-                <label>Depart</label>
-                <input type="date">
-            </div>
-            <div class="input-group">
-                <label>Return</label>
-                <input type="date">
-            </div>
-            <button class="search-btn">SEARCH</button>
-        </div>
-    </section>
+        </section>
 
-    <section class="destinations">
-        <h2>Trending from Kuwait</h2>
-        <div class="grid">
-            <div class="card">
-                <div class="img-placeholder">Dubai</div>
-                <p>Starts from 45 KWD</p>
+        <section class="global-deals">
+            <h2>Global Discovery</h2>
+            <div class="deals-grid">
+                <div class="deal-card"><span>Europe</span></div>
+                <div class="deal-card"><span>Asia</span></div>
+                <div class="deal-card"><span>America</span></div>
+                <div class="deal-card"><span>Middle East</span></div>
             </div>
-            <div class="card">
-                <div class="img-placeholder">London</div>
-                <p>Starts from 120 KWD</p>
-            </div>
-            <div class="card">
-                <div class="img-placeholder">Istanbul</div>
-                <p>Starts from 65 KWD</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2026 AirGo Systems Kuwait. All Rights Reserved.</p>
-    </footer>
+        </section>
+    </div>
 </body>
 </html>
