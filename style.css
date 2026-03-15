@@ -1,34 +1,42 @@
+/* AIRGO PREMIUM STYLESHEET */
 :root {
-    --espresso: #1c1412;
-    --gold: #c5a059;
+    --espresso: #1c1412; /* Deep luxury brown */
+    --gold: #c5a059;     /* Fine gold accent */
     --text-muted: #a8a8a8;
+    --white: #ffffff;
 }
 
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
     background-color: var(--espresso);
-    color: white;
-    -webkit-font-smoothing: antialiased;
+    color: var(--white);
+    -webkit-font-smoothing: antialiased; /* Sharp text */
 }
 
-/* NAVIGATION */
+/* NAVIGATION - Clean and Minimal */
 .top-nav {
-    padding: 25px 8%;
+    padding: 20px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(197, 160, 89, 0.15);
 }
 
-.logo-thin { font-weight: 200; font-size: 26px; color: var(--gold); letter-spacing: 1px; }
-.logo-bold { font-weight: 600; font-size: 26px; color: var(--gold); }
+.logo-thin { font-weight: 200; font-size: 24px; color: var(--gold); letter-spacing: 1px; }
+.logo-bold { font-weight: 600; font-size: 24px; color: var(--gold); }
 
-.tagline { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); font-weight: 400; }
+.tagline { 
+    font-size: 10px; 
+    letter-spacing: 3px; 
+    text-transform: uppercase; 
+    color: var(--text-muted); 
+    font-weight: 400; 
+}
 
-/* SEARCH SECTION */
+/* SEARCH SECTION - Compact Horizontal Layout */
 .hero-section {
-    height: 450px;
+    height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,21 +52,39 @@ body {
 }
 .mode-btn.active { opacity: 1; border-color: var(--gold); }
 
+/* The Engine Wrapper - Wego-inspired white bar */
 .engine-wrapper {
-    background: white;
+    background: var(--white);
     display: flex;
     padding: 6px;
     border-radius: 4px;
     align-items: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-.input-group { flex: 1; padding: 5px 15px; border-right: 1px solid #eee; }
+.input-group { 
+    flex: 1; 
+    padding: 5px 15px; 
+    border-right: 1px solid #eee; 
+}
 .input-group:nth-last-child(2) { border-right: none; }
 
-.input-group label { display: block; font-size: 9px; color: #888; font-weight: 600; margin-bottom: 2px; text-transform: uppercase; }
+.input-group label { 
+    display: block; 
+    font-size: 9px; 
+    color: #888; 
+    font-weight: 600; 
+    text-transform: uppercase; 
+    margin-bottom: 2px; 
+}
+
 .input-group input { 
-    width: 100%; border: none; outline: none; 
-    font-size: 14px; color: #333; font-weight: 500; 
+    width: 100%; 
+    border: none; 
+    outline: none; 
+    font-size: 14px; 
+    color: #333; 
+    font-weight: 500; 
 }
 
 .search-trigger {
@@ -73,13 +99,31 @@ body {
     text-transform: uppercase;
     transition: 0.2s;
 }
-.search-trigger:hover { background: var(--gold); color: white; }
 
-/* DISCOVERY GRID */
-.discovery-area { padding: 80px 8%; }
-.section-title { font-size: 11px; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 40px; color: var(--gold); font-weight: 400; text-align: center; opacity: 0.8; }
+.search-trigger:hover { 
+    background: var(--gold); 
+    color: var(--white); 
+}
 
-.grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
+/* DISCOVERY GRID - Spacious and Professional */
+.discovery-area { padding: 60px 8%; }
+.section-title { 
+    font-size: 11px; 
+    letter-spacing: 6px; 
+    text-transform: uppercase; 
+    margin-bottom: 40px; 
+    color: var(--gold); 
+    text-align: center; 
+    font-weight: 400; 
+    opacity: 0.8; 
+}
+
+.grid-layout { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 25px; 
+}
+
 .card {
     height: 280px;
     background-size: cover;
@@ -90,14 +134,36 @@ body {
     padding: 20px;
     border: 1px solid rgba(197, 160, 89, 0.2);
     position: relative;
+    overflow: hidden;
 }
-.card span { position: relative; z-index: 2; font-size: 18px; font-weight: 200; letter-spacing: 2px; text-transform: uppercase; }
+
+.card span { 
+    position: relative; 
+    z-index: 2; 
+    font-size: 18px; 
+    font-weight: 200; 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+}
+
 .card::after { 
-    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+    content: ''; 
+    position: absolute; 
+    top: 0; left: 0; 
+    width: 100%; height: 100%; 
     background: linear-gradient(transparent, rgba(0,0,0,0.85)); 
-    border-radius: 6px;
 }
 
 /* FOOTER */
-.pro-footer { padding: 60px 5%; border-top: 1px solid rgba(255,255,255,0.03); text-align: center; }
-.footer-info p { font-size: 11px; color: var(--text-muted); line-height: 2.2; letter-spacing: 1px; }
+footer { 
+    padding: 60px 5%; 
+    text-align: center; 
+    border-top: 1px solid rgba(255,255,255,0.03); 
+}
+
+footer p { 
+    font-size: 11px; 
+    color: var(--text-muted); 
+    letter-spacing: 1px; 
+    line-height: 2; 
+}
