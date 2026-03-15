@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AirGo | Global Travel</title>
+    <title>AirGo | The World at Your Fingertips</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap" rel="stylesheet">
     <style>
         :root { --espresso: #1c1412; --gold: #c5a059; --text-muted: #a8a8a8; }
@@ -11,32 +11,40 @@
         
         /* Navigation */
         .top-nav { padding: 25px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(197, 160, 89, 0.15); }
-        .logo-thin { font-weight: 200; font-size: 26px; color: var(--gold); letter-spacing: 1px; }
-        .logo-bold { font-weight: 600; font-size: 26px; color: var(--gold); }
+        .logo-box { font-size: 26px; color: var(--gold); letter-spacing: 1px; }
+        .logo-thin { font-weight: 200; }
+        .logo-bold { font-weight: 600; }
         .tagline { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); }
 
-        /* Search Section - Compact Wego Style */
-        .hero-section { height: 400px; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at center, #251b19, var(--espresso)); }
-        .search-container { width: 90%; max-width: 1050px; }
-        .search-mode { margin-bottom: 12px; display: flex; gap: 20px; }
-        .mode-btn { background: none; border: none; color: white; padding: 6px 0; font-size: 13px; cursor: pointer; opacity: 0.4; border-bottom: 2px solid transparent; }
+        /* Hero Section */
+        .hero-section { padding: 80px 5%; text-align: center; background: radial-gradient(circle at center, #251b19, var(--espresso)); }
+        .hero-section h1 { font-size: 42px; font-weight: 200; color: var(--gold); margin-bottom: 40px; text-transform: uppercase; letter-spacing: 2px; }
+
+        /* Search Bar - Professional Compact Style */
+        .search-container { width: 95%; max-width: 1100px; margin: 0 auto; }
+        .search-mode { margin-bottom: 15px; display: flex; gap: 20px; justify-content: flex-start; }
+        .mode-btn { background: none; border: none; color: white; padding: 8px 0; font-size: 13px; cursor: pointer; opacity: 0.5; border-bottom: 2px solid transparent; text-transform: uppercase; }
         .mode-btn.active { opacity: 1; border-color: var(--gold); }
-        .engine-wrapper { background: white; display: flex; padding: 6px; border-radius: 4px; align-items: center; }
-        .input-group { flex: 1; padding: 5px 15px; border-right: 1px solid #eee; }
+        
+        .engine-wrapper { background: white; display: flex; flex-wrap: wrap; padding: 10px; border-radius: 4px; align-items: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .input-group { flex: 1; min-width: 150px; padding: 10px 15px; border-right: 1px solid #eee; text-align: left; }
         .input-group:nth-last-child(2) { border-right: none; }
-        .input-group label { display: block; font-size: 9px; color: #888; font-weight: 600; text-transform: uppercase; }
-        .input-group input { width: 100%; border: none; outline: none; font-size: 14px; color: #333; }
-        .search-trigger { background: var(--espresso); color: var(--gold); border: 1px solid var(--gold); padding: 12px 25px; border-radius: 3px; font-size: 12px; font-weight: 600; cursor: pointer; text-transform: uppercase; }
+        .input-group label { display: block; font-size: 10px; color: #888; font-weight: 600; text-transform: uppercase; margin-bottom: 5px; }
+        .input-group input { width: 100%; border: none; outline: none; font-size: 14px; color: #333; background: transparent; }
 
-        /* Discovery Grid */
+        .search-trigger { background: var(--espresso); color: var(--gold); border: 1px solid var(--gold); padding: 15px 30px; border-radius: 3px; font-size: 13px; font-weight: 600; cursor: pointer; text-transform: uppercase; transition: 0.3s; margin-left: 10px; }
+        .search-trigger:hover { background: var(--gold); color: white; }
+
+        /* Discovery Section */
         .discovery-area { padding: 60px 8%; }
-        .section-title { font-size: 11px; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 30px; color: var(--gold); text-align: center; }
-        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
-        .card { height: 250px; background-size: cover; background-position: center; border-radius: 6px; display: flex; align-items: flex-end; padding: 20px; border: 1px solid rgba(197, 160, 89, 0.2); position: relative; }
-        .card span { position: relative; z-index: 2; font-size: 16px; font-weight: 200; letter-spacing: 2px; text-transform: uppercase; }
-        .card::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(transparent, rgba(0,0,0,0.85)); border-radius: 6px; }
+        .section-title { font-size: 12px; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 40px; color: var(--gold); text-align: center; opacity: 0.7; }
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; }
+        .card { height: 280px; background-size: cover; background-position: center; border-radius: 6px; display: flex; align-items: flex-end; padding: 25px; border: 1px solid rgba(197, 160, 89, 0.2); position: relative; overflow: hidden; transition: 0.4s; }
+        .card:hover { border-color: var(--gold); transform: translateY(-5px); }
+        .card span { position: relative; z-index: 2; font-size: 18px; font-weight: 200; letter-spacing: 2px; text-transform: uppercase; }
+        .card::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(transparent, rgba(0,0,0,0.9)); }
 
-        footer { padding: 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.03); font-size: 11px; color: var(--text-muted); }
+        footer { padding: 60px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); font-size: 11px; color: var(--text-muted); letter-spacing: 1px; }
     </style>
 </head>
 <body>
@@ -46,10 +54,14 @@
     </nav>
 
     <main class="hero-section">
+        <h1>AirGo: The World Redefined.</h1>
         <div class="search-container">
-            <div class="search-mode"><button class="mode-btn active">Flights</button><button class="mode-btn">Hotels</button></div>
+            <div class="search-mode">
+                <button class="mode-btn active">Flights</button>
+                <button class="mode-btn">Hotels</button>
+            </div>
             <div class="engine-wrapper">
-                <div class="input-group"><label>From</label><input type="text" placeholder="Origin"></div>
+                <div class="input-group"><label>From</label><input type="text" placeholder="Origin City"></div>
                 <div class="input-group"><label>To</label><input type="text" placeholder="Destination"></div>
                 <div class="input-group"><label>Depart</label><input type="date"></div>
                 <div class="input-group"><label>Return</label><input type="date"></div>
@@ -59,12 +71,12 @@
     </main>
 
     <section class="discovery-area">
-        <h2 class="section-title">Explore Global Destinations</h2>
+        <h2 class="section-title">Global Discovery</h2>
         <div class="grid-layout">
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1493397212122-2b85def82820?q=80&w=400')"><span>Europe</span></div>
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1464817739973-0128fe79aa1b?q=80&w=400')"><span>Asia</span></div>
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1485738422979-f5c462d49f74?q=80&w=400')"><span>America</span></div>
-            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=400')"><span>Middle East</span></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1493397212122-2b85def82820?auto=format&fit=crop&w=500&q=80')"><span>Europe</span></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1464817739973-0128fe79aa1b?auto=format&fit=crop&w=500&q=80')"><span>Asia</span></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=500&q=80')"><span>America</span></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=500&q=80')"><span>Middle East</span></div>
         </div>
     </section>
 
