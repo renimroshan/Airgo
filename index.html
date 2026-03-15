@@ -3,65 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AirGo | Global Flight Comparison</title>
+    <title>AirGo | The World at Your Fingertips</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="main-wrapper">
-        <header>
-            <div class="nav-container">
-                <div class="logo">AIRGO</div>
-                <div class="menu">
-                    <a href="#" class="active">Flights</a>
-                    <a href="#">Hotels</a>
-                    <a href="#">Explore</a>
-                </div>
-            </div>
-        </header>
+    <nav class="top-nav">
+        <div class="logo-box">
+            <span class="logo-thin">A</span><span class="logo-bold">irGo</span>
+        </div>
+        <div class="tagline">The world at your fingertips.</div>
+    </nav>
 
-        <section class="hero">
-            <div class="hero-content">
-                <h1>The World, <span>Redefined.</span></h1>
-                <p>Search and compare millions of real-time prices.</p>
-                
-                <div class="search-engine-box">
-                    <div class="trip-type">
-                        <span>Return</span>
-                        <span>One-way</span>
-                        <span>Multi-city</span>
-                    </div>
-                    <div class="search-inputs">
-                        <div class="field">
-                            <label>From</label>
-                            <input type="text" placeholder="Origin Airport">
-                        </div>
-                        <div class="field">
-                            <label>To</label>
-                            <input type="text" placeholder="Destination Airport">
-                        </div>
-                        <div class="field">
-                            <label>Depart</label>
-                            <input type="date">
-                        </div>
-                        <div class="field">
-                            <label>Return</label>
-                            <input type="date">
-                        </div>
-                        <button class="btn-search">Search Flights</button>
-                    </div>
+    <main class="hero-section">
+        <div class="search-container">
+            <div class="search-mode">
+                <button class="mode-btn active">Flights</button>
+                <button class="mode-btn">Hotels</button>
+            </div>
+            
+            <div class="engine-wrapper">
+                <div class="input-group">
+                    <label>From</label>
+                    <input type="text" placeholder="Origin City">
                 </div>
+                <div class="input-group">
+                    <label>To</label>
+                    <input type="text" placeholder="Destination">
+                </div>
+                <div class="input-group">
+                    <label>Depart</label>
+                    <input type="date">
+                </div>
+                <div class="input-group">
+                    <label>Return</label>
+                    <input type="date">
+                </div>
+                <button class="search-trigger">Search Flights</button>
             </div>
-        </section>
+        </div>
+    </main>
 
-        <section class="global-deals">
-            <h2>Global Discovery</h2>
-            <div class="deals-grid">
-                <div class="deal-card"><span>Europe</span></div>
-                <div class="deal-card"><span>Asia</span></div>
-                <div class="deal-card"><span>America</span></div>
-                <div class="deal-card"><span>Middle East</span></div>
-            </div>
-        </section>
-    </div>
+    <section class="discovery-area">
+        <h2 class="section-title">Explore Global Destinations</h2>
+        <div class="grid-layout">
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1493397212122-2b85def82820?q=80&w=400')"><span>Europe</span></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1464817739973-0128fe79aa1b?q=80&w=400')"><span>Asia</span></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1485738422979-f5c462d49f74?q=80&w=400')"><span>America</span></div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=400')"><span>Middle East</span></div>
+        </div>
+    </section>
+
+    <footer class="pro-footer">
+        <div class="footer-info">
+            <p><strong>Support:</strong> AirGo@gmail.com | +965 99751560</p>
+            <p>© 2026 AirGo. Premium Global Flight Intelligence.</p>
+        </div>
+    </footer>
 </body>
 </html>
+                       
